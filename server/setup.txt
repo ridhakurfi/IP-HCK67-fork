@@ -18,11 +18,11 @@ touch controllers/controller.js routers/index.js app.js
 -- npx jest -- rooms.test.js
 
 --- ini proses table
-- npx sequelize model:create --name User --attributes username:string,email:string,password:string,role:string,phoneNumber:string,address:string
-- npx sequelize model:create --name Review --attributes name:string,companyLogo:string,location:string,email:string,description:string
-- npx sequelize model:create --name Food --attributes title:string,description:text,imgUrl:string,jobType:string,companyId:integer,authorId:integer
-- npx sequelize model:create --name Restaurant --attributes name:string,companyLogo:string,location:string,email:string,description:string
-- npx sequelize model:create --name Like --attributes title:string,description:text,imgUrl:string,jobType:string,companyId:integer,authorId:integer
+- npx sequelize model:create --name User --attributes username:string,email:string,password:string,rank:string
+- npx sequelize model:create --name Restaurant --attributes name:string,lat:float,lng:float
+- npx sequelize model:create --name Food --attributes title:string,description:string,price:integer,imgUrl:string,RestoId:integer
+- npx sequelize model:create --name Review --attributes desc:string,score:integer,FoodId:integer,UserId:integer
+- npx sequelize model:create --name Like --attributes liked:boolean,UserId:integer,ReviewId:integer
 - 
 - npx sequelize migration:create --name Valuation
 - npx sequelize db:migrate

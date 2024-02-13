@@ -1,0 +1,26 @@
+[
+    {
+        "username": "Budi",
+        "email": "budi@gmail.com",
+        "password": "pass123",
+        "rank": "Premium"
+    },
+    {
+        "username": "Siti",
+        "email": "siti@gmail.com",
+        "password": "pass456",
+        "rank": "Basic"
+    },
+    {
+        "username": "Rudi",
+        "email": "rudi@gmail.com",
+        "password": "pass789",
+        "rank": "Basic"
+    },
+    {
+        "username": "Anton",
+        "email": "anton@gmail.com",
+        "password": "pass321",
+        "rank": "Basic"
+    }
+]
