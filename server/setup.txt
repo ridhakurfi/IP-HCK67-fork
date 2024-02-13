@@ -1,0 +1,47 @@
+- npm init -y
+- npm i sequelize sequelize-cli express pg
+- npm i bcrypt jsonwebtoken dotenv
+- npm i -D supertest
+- npm i jest
+- npm i cors (access to server)
+- npm i react-router-dom
+- npm uninstall supertest
+- npm i multer cloudinary
+- npx nodemon bin/www
+=> npm i -d nodemon
+- make gitignore and inside it fill with node_modules and .env
+- mkdir controllers routers
+touch controllers/controller.js routers/index.js app.js
+=> npx sequelize init
+- npx sequelize db:create (databasa)
+- snipper jest
+-- npx jest -- rooms.test.js
+
+--- ini proses table
+- npx sequelize model:create --name User --attributes username:string,email:string,password:string,role:string,phoneNumber:string,address:string
+- npx sequelize model:create --name Review --attributes name:string,companyLogo:string,location:string,email:string,description:string
+- npx sequelize model:create --name Food --attributes title:string,description:text,imgUrl:string,jobType:string,companyId:integer,authorId:integer
+- npx sequelize model:create --name Restaurant --attributes name:string,companyLogo:string,location:string,email:string,description:string
+- npx sequelize model:create --name Like --attributes title:string,description:text,imgUrl:string,jobType:string,companyId:integer,authorId:integer
+- 
+- npx sequelize migration:create --name Valuation
+- npx sequelize db:migrate
+- npx sequelize db:migrate --env test
+- npx sequelize db:migrate:undo:all
+- npx sequlize db:create --env test
+- npx sequelize db:migrate:undo:all
+
+--- ini proses seed
+- npx sequelize db:seed --seed 20240102120851-seed-lodging.js --env production
+- npx sequelize db:seed --seed 20240102135432-seed-type.js --env production
+- npx sequelize db:seed --seed 20240102135950-seed-user.js --env production
+- npx sequelize db:seed --seed 20240130015502-seed-job.js
+- npx sequelize seed:create --name seed-job
+- npx sequelize seed:create --name Seed2
+- npx sequelize db:seed:all
+- npx sequelize db:seed:undo
+
+---
+ */
+
+-> --detectOpenHandles --forceExit --runInBand --silent --coverage

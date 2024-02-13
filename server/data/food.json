@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Nasi Goreng Mercun",
+        "description": "Nasi goreng dengan sayur dan sambal khas buatan pak Budi",
+        "price": 23000,
+        "restaurant": "Warung Pak Budi",
+        "lat": -6.285068006298165,
+        "lng": 106.8044031545991
+    },
+    {
+        "name": "Nasi Goreng Kambing",
+        "description": "Nasi goreng dengan daging kambing yang gurih dan lezat",
+        "price": 24000,
+        "restaurant": "Warung Pak Budi",
+        "lat": -6.285068006298165,
+        "lng": 106.8044031545991
+    },
+    {
+        "name": "Ayam Goreng Special",
+        "description": "Ayam goreng dengan bumbu rahasia keluarga pak Budi",
+        "price": 20000,
+        "restaurant": "Warung Pak Budi",
+        "lat": -6.285068006298165,
+        "lng": 106.8044031545991
+    },
+    {
+        "name": "Mie Goreng Sederhana",
+        "description": "Mie goreng dengan bumbu sederhana yang nikmat",
+        "price": 19000,
+        "restaurant": "Warung Pak Budi",
+        "lat": -6.285068006298165,
+        "lng": 106.8044031545991
+    },
+    {
+        "name": "Nasi Goreng Spesial Buah",
+        "description": "Nasi goreng dengan campuran buah-buahan segar",
+        "price": 20000,
+        "restaurant": "Restaurant Kenanga",
+        "lat": -6.28491167064257,
+        "lng": 106.80415431779123
+    },
+    {
+        "name": "Sate Ayam Mantap",
+        "description": "Sate ayam dengan bumbu kacang khas warung pak Budi",
+        "price": 24000,
+        "restaurant": "Restaurant Kenanga",
+        "lat": -6.28491167064257,
+        "lng": 106.80415431779123
+    },
+    {
+        "name": "Kwetiau Goreng Pedas",
+        "description": "Kwetiau goreng dengan cabai pedas yang membara",
+        "price": 21000,
+        "restaurant": "Cafe Jaman Dahulu",
+        "lat": -6.285078667607761,
+        "lng": 106.80344229447806
+    },
+    {
+        "name": "Ikan Bakar Spesial",
+        "description": "Ikan bakar dengan bumbu rempah yang lezat",
+        "price": 35000,
+        "restaurant": "Cafe Jaman Dahulu",
+        "lat": -6.285078667607761,
+        "lng": 106.80344229447806
+    },
+    {
+        "name": "Bakmi Jawa Klasik",
+        "description": "Bakmi jawa dengan cita rasa klasik dan lezat",
+        "price": 30000,
+        "restaurant": "Cafe Jaman Dahulu",
+        "lat": -6.285078667607761,
+        "lng": 106.80344229447806
+    },
+    {
+        "name": "Gado-Gado Spesial",
+        "description": "Gado-gado dengan bumbu kacang yang khas",
+        "price": 31000,
+        "restaurant": "Cafe Jaman Dahulu",
+        "lat": -6.285078667607761,
+        "lng": 106.80344229447806
+    },
+    {
+        "name": "Soto Ayam Segar",
+        "description": "Soto ayam dengan kuah yang gurih dan segar",
+        "price": 25000,
+        "restaurant": "Kantin Kenangan",
+        "lat": -6.2856683315141995,
+        "lng": 106.80113268220876
+    },
+    {
+        "name": "Rawon Khas Surabaya",
+        "description": "Rawon dengan daging sapi yang empuk dan kuah kental",
+        "price": 19000,
+        "restaurant": "Kantin Kenangan",
+        "lat": -6.2856683315141995,
+        "lng": 106.80113268220876
+    }
+]
