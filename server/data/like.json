@@ -1,0 +1,52 @@
+[
+    {
+        "liked": "true",
+        "UserId": 4,
+        "ReviewId": 2
+    },
+    {
+        "liked": "true",
+        "UserId": 4,
+        "ReviewId": 3
+    },
+    {
+        "liked": "true",
+        "UserId": 2,
+        "ReviewId": 1
+    },
+    {
+        "liked": "true",
+        "UserId": 2,
+        "ReviewId": 4
+    },
+    {
+        "liked": "true",
+        "UserId": 2,
+        "ReviewId": 2
+    },
+    {
+        "liked": "true",
+        "UserId": 1,
+        "ReviewId": 3
+    },
+    {
+        "liked": "true",
+        "UserId": 1,
+        "ReviewId": 1
+    },
+    {
+        "liked": "true",
+        "UserId": 3,
+        "ReviewId": 4
+    },
+    {
+        "liked": "true",
+        "UserId": 3,
+        "ReviewId": 2
+    },
+    {
+        "liked": "true",
+        "UserId": 4,
+        "ReviewId": 3
+    }
+]

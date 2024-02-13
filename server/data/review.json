@@ -1,0 +1,44 @@
+[
+    {
+        "desc": "Harus coba, makanan ini murah meriah",
+        "score": 9,
+        "FoodId": 2,
+        "UserId": 3
+    },
+    {
+        "desc": "Makanan enak, harga terjangkau",
+        "score": 8,
+        "FoodId": 1,
+        "UserId": 4
+    },
+    {
+        "desc": "Tempatnya nyaman, pelayanannya ramah",
+        "score": 7,
+        "FoodId": 3,
+        "UserId": 2
+    },
+    {
+        "desc": "Makanannya enak tapi agak mahal",
+        "score": 8,
+        "FoodId": 2,
+        "UserId": 1
+    },
+    {
+        "desc": "Variasi menu banyak, harga bersahabat",
+        "score": 9,
+        "FoodId": 3,
+        "UserId": 3
+    },
+    {
+        "desc": "Makanan lezat, tempat bersih",
+        "score": 9,
+        "FoodId": 1,
+        "UserId": 4
+    },
+    {
+        "desc": "Pelayanan cepat, makanan enak",
+        "score": 8,
+        "FoodId": 3,
+        "UserId": 4
+    }
+]

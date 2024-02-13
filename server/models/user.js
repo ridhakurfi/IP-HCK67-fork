@@ -1,4 +1,5 @@
 'use strict';
+const { hasher } = require("../helpers/bcrypt");
 const {
   Model
 } = require('sequelize');
@@ -78,6 +79,16 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   }, {
+    hooks: {
+      beforeCreate: function (user) {
+        user.password = hasher(user.password);
+      },
+    },
+    beforeBulkCreate: function (users) {
+      users.forEach((r) => {
+        r.password = hasher(r.password);
+      });
+    },
     sequelize,
     modelName: 'User',
   });
