@@ -50,6 +50,14 @@ export default function Login() {
                     "google-token": response.credential
                 }
             })
+            localStorage.setItem('token', 'Bearer ' + data.access_token)
+            localStorage.setItem('rank', data.rank)
+            Swal.fire({
+                icon: "Sucess",
+                title: "Welcome",
+                text: `Hello there`,
+            });
+            navigate('/')
         } catch (error) {
             console.log(error);
         }
@@ -62,9 +70,8 @@ export default function Login() {
             });
             google.accounts.id.renderButton(
                 document.getElementById("buttonDiv"),
-                { theme: "outline", size: "large" }  // customization attributes
+                { theme: "outline", size: "large" }
             );
-            // google.accounts.id.prompt(); // also display the One Tap dialog
         }
     }, [])
     console.log(login);
@@ -81,7 +88,6 @@ export default function Login() {
                     <input type="submit" value="Login" className="btn-neutral bg-orange" />
                     <Link to={"/register"}>Not A Member? Register Here</Link>
                     <div className="my-3 d-flex jusitifycontent">
-                        <p>OR</p>
                         <div id="buttonDiv">
                         </div>
                     </div>

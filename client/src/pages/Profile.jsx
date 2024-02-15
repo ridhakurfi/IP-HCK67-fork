@@ -2,15 +2,15 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 export default function CardRev() {
-    const [rev, setRev] = useState([])
+    const [usr, setUsr] = useState({})
     async function getRev() {
         try {
             const response = await axios({
-                url: 'http://localhost:3000/reviews',
+                url: 'http://localhost:3000/user',
                 method: 'GET',
                 headers: {
                     Authorization: localStorage.getItem('token')
-                }
+                }/user
             })
             setRev(response.data)
         } catch (error) {

@@ -8,13 +8,13 @@ const { authenticate } = require("../middlewares/authenticator");
 const router = express.Router();
 
 router.get("/", Controller.home);
-router.get("/reviews", Controller.getReviews);
 router.post("/login", Controller.login);
 router.post("/login/google", Controller.googleLog)
 router.post("/register", Controller.register);
-router.get("/maps/:id", Controller.getLoc);
-
 router.use(authenticate)
+router.get("/reviews", Controller.getReviews);
+router.get("/maps/:id", Controller.getLoc);
+router.get("/user", Controller.getUser)
 
 router.use(errorManager);
 module.exports = router;

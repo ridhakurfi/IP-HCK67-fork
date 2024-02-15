@@ -29,9 +29,25 @@ class Controller {
       next(error);
     }
   }
+  static async getUser(req, res, next) {
+    try {
+      console.log(req.params.id);
+      const usr = await Review.findAll({
+        include: [
+          {
+            model: User,
+          },
+        ],
+      });
+      console.log(usr);
+      res.status(200).json(usr);
+    } catch (error) {
+      next(error);
+    }
+  }
   static async getLoc(req, res, next) {
     try {
-      const maps = await Restaurant.findByPk(req.params.id);
+      const maps = await Restaurant.findAll();
       res.status(200).json(maps);
     } catch (error) {
       next(error);
@@ -66,7 +82,6 @@ class Controller {
           "142608278006-uk72gb20co2g3ej50hrjvse09o17oc0q.apps.googleusercontent.com",
       });
       const payload = ticket.getPayload();
-      console.log(payload);
       const user = await User.findOne({
         where: {
           email: payload.email,
@@ -79,9 +94,12 @@ class Controller {
           password: "dummy" + Date.now(),
           rank: "Basic",
         });
+        const jwtok = signer({ id: newUser.id });
+        res.status(200).json({ access_token: jwtok, newUser: user.rank });
+      } else {
+        const jwtok = signer({ id: user.id });
+        res.status(200).json({ access_token: jwtok, rank: user.rank });
       }
-      const access_token = signer({ id: newUser.id, rank: newUser.rank });
-      res.status(200).json({ access_token });
     } catch (error) {
       next(error);
     }
