@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import CardRev from '../pages/Cards'
-import LogMe from '../pages/Login'
+import Login from '../pages/Login'
+import Registry from '../pages/Register'
 const router = createBrowserRouter([
     {
         path: "/",
@@ -8,7 +9,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/login",
-        element: <LogMe></LogMe>
+        element: <Login></Login>
+    },
+    {
+        path: "/register",
+        element: <Registry></Registry>
     },
 ])
 
