@@ -6,7 +6,7 @@ export default function CardRev() {
     async function getRev() {
         try {
             const response = await axios({
-                url: 'http://localhost:3000/foods',
+                url: 'http://localhost:3000/reviews',
                 method: 'GET'
             })
             setRev(response.data)
@@ -25,11 +25,12 @@ export default function CardRev() {
                     return (
                         <div className="container mx-auto flex flex-wrap justify-evenly">
                             <div className="card w-96 bg-base-100 shadow-xl">
-                                <figure><img src={item.imgUrl} alt="Shoes" /></figure>
+                                <figure><img src={item.Food.imgUrl} alt="hei" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{item.title}</h2>
-                                    <p>{item.description}</p>
+                                    <p>{item.Food.Restaurant.name}</p>
                                     <div className="card-actions justify-end">
+                                        <h1>{item.desc}</h1>
                                         <button className="btn btn-primary">
                                             <Link to={`/`}>REVIEW</Link>
                                         </button>
