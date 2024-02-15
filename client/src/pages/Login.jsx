@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 import Swal from 'sweetalert2'
+
+
 export default function Login() {
     const navigate = useNavigate()
     const [login, setLogin] = useState({
@@ -12,11 +14,17 @@ export default function Login() {
         try {
             event.preventDefault();
             const { data } = await axios({
-                url: 'http://localhost:3000/reviews',
+                url: 'http://localhost:3000/login',
                 method: 'POST',
                 data: login
             })
             localStorage.setItem('token', 'Bearer ' + data.access_token)
+            localStorage.setItem('rank', data.rank)
+            Swal.fire({
+                icon: "Sucess",
+                title: "Welcome",
+                text: `Hello there`,
+            });
             navigate('/')
         } catch (error) {
             Swal.fire({
@@ -33,6 +41,32 @@ export default function Login() {
             [name]: value
         })
     }
+    const handleCredentialResponse = async (response) => {
+        try {
+            const { data } = await axios({
+                url: "http://localhost:3000/login/google",
+                method: "POST",
+                headers: {
+                    "google-token": response.credential
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "142608278006-uk72gb20co2g3ej50hrjvse09o17oc0q.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"),
+                { theme: "outline", size: "large" }  // customization attributes
+            );
+            // google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+    }, [])
     console.log(login);
     return (
         <>
@@ -45,7 +79,12 @@ export default function Login() {
                     <input onChange={logInput} type="password" id="pass" name="password" />
                     <br />
                     <input type="submit" value="Login" className="btn-neutral bg-orange" />
-                <Link to={"/register"}>Not A Member? Register Here</Link>
+                    <Link to={"/register"}>Not A Member? Register Here</Link>
+                    <div className="my-3 d-flex jusitifycontent">
+                        <p>OR</p>
+                        <div id="buttonDiv">
+                        </div>
+                    </div>
                 </form>
             </div>
         </>

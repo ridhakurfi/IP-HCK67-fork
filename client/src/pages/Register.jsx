@@ -18,7 +18,12 @@ export default function Registry() {
                 method: 'POST',
                 data: user
             })
-            navigate('/')
+            Swal.fire({
+                icon: "success",
+                title: "Succesfully registered",
+                text: "Please Login",
+            });
+            navigate('/login')
         } catch (error) {
             Swal.fire({
                 icon: "error",

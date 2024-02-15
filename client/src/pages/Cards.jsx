@@ -22,7 +22,6 @@ export default function CardRev() {
         <>
             <div className="container mx-auto flex flex-wrap justify-evenly bg-blue-200">
                 <h3 className="text-4xl">WELCOME FOOD LOVERS</h3>
-                <Link to={'/login'}>SIGN ME UP</Link>
             </div>
             {
                 rev.map(item => {
