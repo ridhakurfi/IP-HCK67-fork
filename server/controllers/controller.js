@@ -27,6 +27,14 @@ class Controller {
       next(error);
     }
   }
+  static async getLoc(req,res,next){
+    try {
+      const maps = await Restaurant.findByPk(req.params.id)
+      res.status(200).json(maps)
+    } catch (error) {
+      next(error)
+    }
+  }
   static async login(req, res, next) {
     try {
       const { email, password } = req.body;

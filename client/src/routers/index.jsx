@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import CardRev from '../pages/Cards'
 import Login from '../pages/Login'
 import Registry from '../pages/Register'
+import Gmaps from '../pages/Maps'
 const router = createBrowserRouter([
     {
         path: "/",
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     {
         path: "/register",
         element: <Registry></Registry>
+    },
+    {
+        path: "/maps",
+        element: <Gmaps></Gmaps>
     },
 ])
 

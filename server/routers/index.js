@@ -11,6 +11,8 @@ router.get("/", Controller.home);
 router.get("/reviews", Controller.getReviews);
 router.post("/login", Controller.login);
 router.post("/register", Controller.register);
+router.get("/maps/:id", Controller.getLoc);
+
 router.use(authenticate)
 
 router.use(errorManager);
