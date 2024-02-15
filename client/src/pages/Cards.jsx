@@ -20,6 +20,10 @@ export default function CardRev() {
     console.log(rev);
     return (
         <>
+            <div className="container mx-auto flex flex-wrap justify-evenly bg-blue-200">
+                <h3 className="text-4xl">WELCOME FOOD LOVERS</h3>
+                <Link to={'/login'}>SIGN ME UP</Link>
+            </div>
             {
                 rev.map(item => {
                     return (
@@ -28,11 +32,11 @@ export default function CardRev() {
                                 <figure><img src={item.Food.imgUrl} alt="hei" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{item.title}</h2>
-                                    <p>{item.Food.Restaurant.name}</p>
+                                    <p>{item.Food.title}</p>
                                     <div className="card-actions justify-end">
                                         <h1>{item.desc}</h1>
                                         <button className="btn btn-primary">
-                                            <Link to={`/`}>REVIEW</Link>
+                                            <Link to={`/maps/${item.Food.Restaurant.id}`}>Location</Link>
                                         </button>
                                     </div>
                                 </div>

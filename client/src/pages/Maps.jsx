@@ -1,46 +1,66 @@
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
+import axios from 'axios';
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+    width: '400px',
+    height: '400px'
 };
 
-const center = {
-  "lat": -6.2856683315141995,
-  "lng": 106.80113268220876
-};
+let center = { lat: 0, lng: 0 }
 
 function Gmaps() {
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: import.meta.env.VITE_G_MAP_CLIENT
-  })
-
-  const [map, setMap] = useState(null)
-
-  const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-
-    setMap(map)
-  }, [])
-
-  const onUnmount = useCallback(function callback(map) {
-    setMap(null)
-  }, [])
-
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={10}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-    >
-      <></>
-    </GoogleMap>
-  ) : <></>
+    let { id } = useParams()
+    const [gmap, setGmap] = useState({})
+    async function getGmap() {
+        try {
+            const response = await axios({
+                url: `http://localhost:3000/maps/${id}`,
+                method: 'get'
+            })
+            center = {
+                "lat": response.data.lat,
+                "lng": response.data.lng
+            };
+            setGmap(response.data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        getGmap()
+    }, [])
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: import.meta.env.VITE_G_MAP_CLIENT
+    })
+    const [map, setMap] = useState(null)
+    const onLoad = useCallback(function callback(map) {
+        const bounds = new window.google.maps.LatLngBounds(center);
+        map.fitBounds(bounds);
+        setMap(map)
+    }, [])
+    const onUnmount = useCallback(function callback(map) {
+        setMap(null)
+    }, [])
+    return isLoaded ? (
+        <>
+            <div className='flex items-center justify-center h-screen p-0 bg-green-200'>
+                <div>
+                    <h1>{gmap.name}</h1>
+                    <GoogleMap
+                        mapContainerStyle={containerStyle}
+                        center={center}
+                        zoom={10}
+                        onLoad={onLoad}
+                        onUnmount={onUnmount}
+                    >
+                    </GoogleMap>
+                </div>
+            </div>
+        </>
+    ) : <></>
 }
 
 export default Gmaps

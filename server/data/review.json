@@ -14,7 +14,7 @@
     {
         "desc": "Tempatnya nyaman, pelayanannya ramah",
         "score": 7,
-        "FoodId": 3,
+        "FoodId": 6,
         "UserId": 2
     },
     {
@@ -26,19 +26,19 @@
     {
         "desc": "Variasi menu banyak, harga bersahabat",
         "score": 9,
-        "FoodId": 3,
+        "FoodId": 7,
         "UserId": 3
     },
     {
         "desc": "Makanan lezat, tempat bersih",
         "score": 9,
-        "FoodId": 1,
+        "FoodId": 8,
         "UserId": 4
     },
     {
         "desc": "Pelayanan cepat, makanan enak",
         "score": 8,
-        "FoodId": 3,
+        "FoodId": 12,
         "UserId": 4
     }
 ]

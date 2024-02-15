@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <Registry></Registry>
     },
     {
-        path: "/maps",
+        path: "/maps/:id",
         element: <Gmaps></Gmaps>
     },
 ])
