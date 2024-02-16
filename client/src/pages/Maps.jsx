@@ -17,7 +17,10 @@ function Gmaps() {
         try {
             const response = await axios({
                 url: `http://34.143.204.34/maps/${id}`,
-                method: 'get'
+                method: 'get',
+                headers: {
+                    Authorization: localStorage.getItem('token')
+                }
             })
             center = {
                 "lat": response.data.lat,
