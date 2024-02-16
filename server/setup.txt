@@ -25,7 +25,7 @@ touch controllers/controller.js routers/index.js app.js
 - npx sequelize model:create --name Like --attributes liked:boolean,UserId:integer,ReviewId:integer
 - 
 - npx sequelize migration:create --name Valuation
-- npx sequelize db:migrate
+- npx sequelize db:migrate --env production
 - npx sequelize db:migrate --env test
 - npx sequelize db:migrate:undo:all
 - npx sequlize db:create --env test
@@ -42,7 +42,7 @@ touch controllers/controller.js routers/index.js app.js
 - npx sequelize seed:create --name seed-review
 - npx sequelize seed:create --name seed-like
 - npx sequelize seed:create --name Seed2
-- npx sequelize db:seed:all
+- npx sequelize db:seed:all --env production
 - npx sequelize db:seed:undo
 
 ---
