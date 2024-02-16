@@ -16,7 +16,7 @@ function Gmaps() {
     async function getGmap() {
         try {
             const response = await axios({
-                url: `http://localhost:3000/maps/${id}`,
+                url: `http://34.143.204.34/maps/${id}`,
                 method: 'get'
             })
             center = {

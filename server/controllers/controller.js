@@ -47,7 +47,7 @@ class Controller {
   }
   static async getLoc(req, res, next) {
     try {
-      const maps = await Restaurant.findAll();
+      const maps = await Restaurant.findByPk(req.params.id);
       res.status(200).json(maps);
     } catch (error) {
       next(error);

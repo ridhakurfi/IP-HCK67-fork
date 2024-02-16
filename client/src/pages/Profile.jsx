@@ -6,7 +6,7 @@ export default function CardRev() {
     async function getRev() {
         try {
             const response = await axios({
-                url: 'http://localhost:3000/user',
+                url: 'http://34.143.204.34/user',
                 method: 'GET',
                 headers: {
                     Authorization: localStorage.getItem('token')

@@ -14,7 +14,7 @@ export default function Registry() {
         try {
             event.preventDefault()
             await axios({
-                url: 'http://localhost:3000/register',
+                url: 'http://34.143.204.34/register',
                 method: 'POST',
                 data: user
             })
