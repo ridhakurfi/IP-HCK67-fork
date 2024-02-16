@@ -14,7 +14,7 @@ export default function Login() {
         try {
             event.preventDefault();
             const { data } = await axios({
-                url: 'http://localhost:3000/login',
+                url: 'http://34.143.204.34/login',
                 method: 'POST',
                 data: login
             })
@@ -44,7 +44,7 @@ export default function Login() {
     const handleCredentialResponse = async (response) => {
         try {
             const { data } = await axios({
-                url: "http://localhost:3000/login/google",
+                url: "http://34.143.204.34/login/google",
                 method: "POST",
                 headers: {
                     "google-token": response.credential
