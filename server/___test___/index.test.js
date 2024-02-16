@@ -9,10 +9,9 @@ const { signer } = require("../helpers/jwtoken");
 
 let accesstokenRandom = "kesanakemari";
 let accestokenSt;
-let accestokenSt2;
 
 beforeAll(async () => {
-  await Restaurant.bulkCreate(company);
+  await Restaurant.bulkCreate(resto);
   const Users = await User.bulkCreate(user);
   await Food.bulkCreate(food);
   await Review.bulkCreate(review);
